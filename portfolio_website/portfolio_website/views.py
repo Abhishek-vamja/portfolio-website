@@ -1,11 +1,16 @@
 from django.shortcuts import render,redirect,HttpResponse
 from django.contrib.auth.mixins import LoginRequiredMixin
-
+from .models import *
 
 class PortfolioWebSite():
     
     def home_view(request):
-        return render(request, 'index.html')
+        project_obj = Project.objects.all()
+        context = {
+            'project': project_obj,
+        } 
+
+        return render(request, 'index.html', context)
 
     def about_view(request):
         return render(request, 'about.html')
