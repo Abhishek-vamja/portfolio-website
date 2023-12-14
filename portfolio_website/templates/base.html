@@ -48,22 +48,22 @@ Author URL: http://w3layouts.com
 
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav ms-lg-auto align-items-center">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                        <li class="nav-item {% if request.resolver_match.url_name == 'index' %}active{% endif %}">
+                            <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
                         </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="about.html">About</a>
+                        <li class="nav-item {% if request.resolver_match.url_name == 'about' %}active{% endif %}">
+                            <a class="nav-link" href="{% url 'about' %}">About</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="services.html">Services</a>
+                        <li class="nav-item {% if request.resolver_match.url_name == 'service' %}active{% endif %}">
+                            <a class="nav-link" href="{% url 'service' %}">Services</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact</a>
+                        <li class="nav-item {% if request.resolver_match.url_name == 'contact' %}active{% endif %}">
+                            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
                         </li>
 
                         <!--/right-btn-->
                         <div class="header-btn mx-2">
-                            <a class="btn btn-style btn-primary mr-lg-5" href="contact.html"> Hire Me</a>
+                            <a class="btn btn-style btn-primary mr-lg-5" href="{% url 'contact' %}"> Hire Me</a>
                         </div>
                         <!--/right-btn-->
 

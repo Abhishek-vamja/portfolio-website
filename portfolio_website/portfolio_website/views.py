@@ -14,4 +14,4 @@ class PortfolioWebSite():
         return render(request, 'contact.html')
     
     def service_view(request):
-        return render(request, 'service.html')
+        return render(request, 'services.html')
